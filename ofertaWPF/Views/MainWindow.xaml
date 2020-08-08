@@ -1,0 +1,62 @@
+﻿<Window x:Name="mWindow" x:Class="ofertaWPF.MainWindow"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ofertaWPF"
+        xmlns:beha="clr-namespace:ofertaWPF.Views"
+        mc:Ignorable="d"
+        MinHeight="450"
+        MinWidth="600"
+        
+        Title="Oferta" Height="450" Width="800">
+
+
+    <Grid>
+        <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+            <StackPanel Background="#FFF0F0F0">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="0,0,0,0"/>
+                        <Setter Property="Height" Value="40"/>
+                        <Setter Property="Width" Value="100"/>
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="VerticalAlignment" Value="Top" />
+
+                    </Style>
+                </StackPanel.Resources>
+                <Label MinHeight="25"></Label>
+                <Button x:Name="BtSeleccionar" Content="Seleccion de&#xA;Oferta" Click="BtSeleccionar_Click" />
+                <Button x:Name="BtVerOferta" Content="Ver Oferta" Click="BtVerOferta_Click" />
+                <Button x:Name="BtDisponibilidad" Content="Disponibilidad &#xa;de Aulas" Click="BtDisponibilidad_Click" />
+                <Button x:Name="BtAgregar" Content="Agregar Oferta" Click="BtAgregar_Click" />
+            </StackPanel>
+
+
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <Label Content="Oferta Seleccionada:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+                    <Label Content="{Binding SelectedTrimText, Mode=OneWay}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" MinHeight="26" MinWidth="30" FontWeight="Bold" FontSize="14"/>
+                </StackPanel>
+
+                <Frame beha:DisableNavigation.Disable="True" Grid.Row="1" x:Name="FrMain" NavigationUIVisibility="Hidden" Content="Frame" MinWidth="200" MinHeight="200"  />
+            </Grid>
+            
+                
+
+            
+
+            
+        </StackPanel>
+        
+
+    </Grid>
+
+</Window>
